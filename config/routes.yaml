@@ -15,3 +15,10 @@ app.swagger_ui:
   path: /api/doc
   methods: GET
   defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
+
+api_graphql_entrypoint:
+  path: /api/graphql
+  controller: api_platform.graphql.action.entrypoint
+graphiql:
+  path: /api/docs/graphiql
+  controller: api_platform.graphql.action.graphiql
