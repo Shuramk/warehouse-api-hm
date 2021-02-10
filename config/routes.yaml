@@ -16,9 +16,42 @@ app.swagger_ui:
   methods: GET
   defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
 
-api_graphql_entrypoint:
+overblog_graphql_endpoint:
   path: /api/graphql
-  controller: api_platform.graphql.action.entrypoint
-graphiql:
-  path: /api/docs/graphiql
-  controller: api_platform.graphql.action.graphiql
+  defaults:
+    _controller: Overblog\GraphQLBundle\Controller\GraphController::endpointAction
+    _format: "json"
+
+overblog_graphql_batch_endpoint:
+  path: /api/graphql/batch
+  defaults:
+    _controller: Overblog\GraphQLBundle\Controller\GraphController::batchEndpointAction
+    _format: "json"
+
+overblog_graphql_multiple_endpoint:
+  path: /api/graphql/{schemaName}
+  defaults:
+    _controller: Overblog\GraphQLBundle\Controller\GraphController::endpointAction
+    _format: "json"
+  requirements:
+    schemaName: '[^/]+'
+
+overblog_graphql_batch_multiple_endpoint:
+  path: /api/graphql/{schemaName}/batch
+  defaults:
+    _controller: Overblog\GraphQLBundle\Controller\GraphController::batchEndpointAction
+    _format: "json"
+  requirements:
+    schemaName: '[^/]+'
+
+
+overblog_graphiql_endpoint:
+  path: /api/doc/graphiql
+  defaults:
+    _controller: Overblog\GraphiQLBundle\Controller\GraphiQLController::indexAction
+
+overblog_graphiql_endpoint_multiple:
+  path: /api/doc/graphiql/{schemaName}
+  defaults:
+    _controller: Overblog\GraphiQLBundle\Controller\GraphiQLController::indexAction
+

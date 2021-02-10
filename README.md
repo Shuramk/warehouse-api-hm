@@ -12,7 +12,7 @@ docker-compose exec php php bin/console doctrine:fixtures:load -n
 ```
 
 `Swagger:`
-http://localhost:8000/api/docs
+http://localhost:8000/api/doc
 
 `graphiql:`
-http://127.0.0.1:8000/api/docs/graphiql
+http://127.0.0.1:8000/api/doc/graphiql

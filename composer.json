@@ -69,6 +69,8 @@
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.4",
         "overblog/graphiql-bundle": "^0.2.1",
-        "symfony/maker-bundle": "^1.29"
+        "symfony/maker-bundle": "^1.29",
+        "symfony/stopwatch": "^5.2",
+        "symfony/web-profiler-bundle": "^5.2"
     }
 }

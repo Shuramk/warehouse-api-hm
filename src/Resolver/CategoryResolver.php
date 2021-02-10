@@ -4,6 +4,7 @@ namespace App\Resolver;
 
 use App\Entity\Category;
 use App\Repository\CategoryRepository;
+use ArrayObject;
 use Doctrine\ORM\EntityManagerInterface;
 use GraphQL\Type\Definition\ResolveInfo;
 use Overblog\GraphQLBundle\Definition\Argument;
@@ -24,7 +25,7 @@ class CategoryResolver extends ResolverMap {
     {
         return [
             'Query' => [
-                self::RESOLVE_FIELD => function ($value, Argument $args, \ArrayObject $context, ResolveInfo $info) {
+                self::RESOLVE_FIELD => function ($value, Argument $args, ArrayObject $context, ResolveInfo $info) {
                     if ('category' === $info->fieldName) {
                         $category = $this->categoryRepository->find($args['id']);
                         if ($category) {
