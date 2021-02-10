@@ -1,0 +1,14 @@
+type Mutation {
+    """Deletes Category."""
+    deleteCategory(id: ID!): Category
+    """Update Category."""
+    updateCategory(id: ID!, name: String): Category
+    """Create Category."""
+    createCategory(name: String!): Category
+    """Detele Product."""
+    deleteProduct(id: ID!): Product
+    """Uodate Product."""
+    updateProduct(id: ID!, name: String, description: String, price: String, quantity: String, category: String): Product
+    """Create Product."""
+    createProduct(name: String!, description: String, price: String!, quantity: String!, category: String): Product
+}

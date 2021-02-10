@@ -1,0 +1,36 @@
+type Query {
+    category(id: ID!): Category
+    categories: [Category]
+    product(id: ID!): Product
+    products: [Product]
+}
+
+
+type Category {
+    id: ID!
+    _id: Int!
+    name: String!
+}
+
+
+type CategoryProduct {
+    id: ID!
+    _id: Int!
+    name: String!
+    description: String
+    price: String!
+    quantity: String!
+}
+
+type Product {
+    id: ID!
+    _id: Int!
+    name: String!
+    description: String
+    price: String!
+    quantity: String!
+    category: Category
+}
+
+
+
