@@ -3,9 +3,11 @@
 namespace App\Entity;
 
 use App\Repository\CategoryRepository;
+use App\Repository\ProductRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\ManagerRegistry;
 
 /**
  * @ORM\Entity(repositoryClass=CategoryRepository::class)
@@ -27,7 +29,7 @@ class Category implements \JsonSerializable
     /**
      * @ORM\OneToMany(targetEntity=Product::class, mappedBy="category")
      */
-    private $products;
+    private ArrayCollection $products;
 
     public function __construct()
     {
@@ -54,7 +56,7 @@ class Category implements \JsonSerializable
     /**
      * @return Collection|Product[]
      */
-    public function getProducts(): Collection
+    public function getProducts(): ArrayCollection
     {
         return $this->products;
     }

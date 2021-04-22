@@ -19,10 +19,10 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
-    // /**
-    //  * @return Product[] Returns an array of Product objects
-    //  */
-    /*
+     /**
+      * @return Product[] Returns an array of Product objects
+      */
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('p')
@@ -32,9 +32,10 @@ class ProductRepository extends ServiceEntityRepository
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
+
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Product

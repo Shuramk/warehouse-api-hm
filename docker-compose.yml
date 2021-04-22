@@ -33,3 +33,13 @@ services:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "warehouse-api-hm"
       MYSQL_ROOT_HOST: "%"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+      - db:db
+    ports:
+      - 8765:80
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    depends_on:
+      - db
